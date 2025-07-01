@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  chroma:
+    image: chromadb/chroma:0.4.14
+    container_name: Chroma-Db-AI
+    ports:
+      - "8000:8000"
+    volumes:
+      - chroma_data_prod:/chroma/chroma
+    environment:
+      IS_PERSISTENT: "TRUE"
+      ANONYMIZED_TELEMETRY: "FALSE"
+
+volumes:
+  chroma_data_prod:

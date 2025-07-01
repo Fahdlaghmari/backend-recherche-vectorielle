@@ -1,0 +1,383 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< com.example.chatbotrag:chatbot_rag >-----------------
+[INFO] Building chatbot_rag 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.4.4:run (default-cli) > test-compile @ chatbot_rag >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ chatbot_rag ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ chatbot_rag ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 29 source files with javac [debug parameters release 21] to target\classes
+[INFO] /C:/Users/PC/Desktop/backen_version_final-main/src/main/java/com/example/chatbotrag/service/LanguageDetectionService.java: C:\Users\PC\Desktop\backen_version_final-main\src\main\java\com\example\chatbotrag\service\LanguageDetectionService.java uses or overrides a deprecated API.
+[INFO] /C:/Users/PC/Desktop/backen_version_final-main/src/main/java/com/example/chatbotrag/service/LanguageDetectionService.java: Recompile with -Xlint:deprecation for details.
+[INFO] /C:/Users/PC/Desktop/backen_version_final-main/src/main/java/com/example/chatbotrag/controller/AdminController.java: Some input files use unchecked or unsafe operations.
+[INFO] /C:/Users/PC/Desktop/backen_version_final-main/src/main/java/com/example/chatbotrag/controller/AdminController.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ chatbot_rag ---
+[INFO] skip non existing resourceDirectory C:\Users\PC\Desktop\backen_version_final-main\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ chatbot_rag ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 1 source file with javac [debug parameters release 21] to target\test-classes
+[INFO] 
+[INFO] <<< spring-boot:3.4.4:run (default-cli) < test-compile @ chatbot_rag <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.4.4:run (default-cli) @ chatbot_rag ---
+[INFO] Attaching agents: []
+[APP] ChatbotRagApplication démarre
+Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.4)
+
+2025-06-30T17:07:51.285+01:00  INFO 23500 --- [chatbot_rag] [           main] c.e.chatbotrag.ChatbotRagApplication     : Starting ChatbotRagApplication using Java 21.0.6 with PID 23500 (C:\Users\PC\Desktop\backen_version_final-main\target\classes started by PC in C:\Users\PC\Desktop\backen_version_final-main)
+2025-06-30T17:07:51.287+01:00  INFO 23500 --- [chatbot_rag] [           main] c.e.chatbotrag.ChatbotRagApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-06-30T17:07:51.998+01:00  INFO 23500 --- [chatbot_rag] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-30T17:07:52.055+01:00  INFO 23500 --- [chatbot_rag] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 3 JPA repository interfaces.
+2025-06-30T17:07:52.556+01:00  INFO 23500 --- [chatbot_rag] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-06-30T17:07:52.569+01:00  INFO 23500 --- [chatbot_rag] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-30T17:07:52.569+01:00  INFO 23500 --- [chatbot_rag] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-06-30T17:07:52.633+01:00  INFO 23500 --- [chatbot_rag] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-30T17:07:52.633+01:00  INFO 23500 --- [chatbot_rag] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1305 ms
+Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+2025-06-30T17:07:52.774+01:00  INFO 23500 --- [chatbot_rag] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-30T17:07:52.828+01:00  INFO 23500 --- [chatbot_rag] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-06-30T17:07:52.859+01:00  INFO 23500 --- [chatbot_rag] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-30T17:07:53.114+01:00  INFO 23500 --- [chatbot_rag] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-30T17:07:53.142+01:00  INFO 23500 --- [chatbot_rag] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-30T17:07:53.292+01:00  INFO 23500 --- [chatbot_rag] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3212bfd
+2025-06-30T17:07:53.294+01:00  INFO 23500 --- [chatbot_rag] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-30T17:07:53.314+01:00  WARN 23500 --- [chatbot_rag] [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-30T17:07:53.315+01:00  WARN 23500 --- [chatbot_rag] [           main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-06-30T17:07:53.330+01:00  INFO 23500 --- [chatbot_rag] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-30T17:07:54.239+01:00  INFO 23500 --- [chatbot_rag] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-30T17:07:54.351+01:00  INFO 23500 --- [chatbot_rag] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-30T17:07:54.687+01:00  INFO 23500 --- [chatbot_rag] [           main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authProvider
+2025-06-30T17:07:54.687+01:00  WARN 23500 --- [chatbot_rag] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-06-30T17:07:55.082+01:00  INFO 23500 --- [chatbot_rag] [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+[API] ChunkController instancié
+2025-06-30T17:07:55.132+01:00  WARN 23500 --- [chatbot_rag] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-30T17:07:55.530+01:00  INFO 23500 --- [chatbot_rag] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-06-30T17:07:55.536+01:00  INFO 23500 --- [chatbot_rag] [           main] c.e.chatbotrag.ChatbotRagApplication     : Started ChatbotRagApplication in 4.609 seconds (process running for 4.987)
+Hibernate: select count(*) from admin_user au1_0
+?? Admin existant détecté. Aucun nouveau compte créé.
+2025-06-30T17:08:13.779+01:00  INFO 23500 --- [chatbot_rag] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-30T17:08:13.779+01:00  INFO 23500 --- [chatbot_rag] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-30T17:08:13.780+01:00  INFO 23500 --- [chatbot_rag] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[CHAT_SERVICE] ? Début du traitement de la question: hello
+Hibernate: select c1_0.id,c1_0.document_id,c1_0.text from chunk c1_0
+Hibernate: select au1_0.id,au1_0.password,au1_0.username from admin_user au1_0 where au1_0.username=?
+Hibernate: select d1_0.id,d1_0.language,d1_0.name from document d1_0
+Hibernate: select au1_0.id,au1_0.password,au1_0.username from admin_user au1_0 where au1_0.username=?
+Hibernate: select d1_0.id,d1_0.language,d1_0.name from document d1_0
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection default already exists.')"}"
+[CHAT_SERVICE] ? Début du traitement de la question: bonjour
+[CHAT_SERVICE] ? Début du traitement de la question: je veux importer des chevaux de course
+[CHAT_SERVICE] ? Recherche vectorielle des documents pertinents...
+[VECTOR_SEARCH] ? Question utilisateur : je veux importer des chevaux de course
+[VECTOR_SEARCH] ? Génération de l'embedding pour la question...
+[VECTOR_SEARCH] ? Embedding généré (dimension: 768)
+[VECTOR_SEARCH] ? Recherche vectorielle dans ChromaDB...
+[VECTOR_SEARCH] ? Résultats trouvés : 10
+[VECTOR_SEARCH] ? Chunk sélectionné (score: 0,8506): égorie Yoghourt, babeurre, lait et crème caillés, képhir et autres laits et crèmes fermentés ou acid...
+[VECTOR_SEARCH] ? Chunk sélectionné (score: 0,8463): compris les pastèques) :. Ce code identifie - - Pastèques  L'importation au Maroc des produits relat...
+[VECTOR_SEARCH] ? Chunk sélectionné (score: 0,8449): es, de viandes ou d'abats Viandes de l'espèce bovine. Ce code identifie - - - - - - - autres  L'impo...
+[VECTOR_SEARCH] ? Chunk sélectionné (score: 0,8449): es, de viandes ou d'abats Viandes de l'espèce bovine. Ce code identifie - - - - - - - autres  L'impo...
+[VECTOR_SEARCH] ? Chunk sélectionné (score: 0,8443): abeurre, lait et crème caillés, képhir et autres laits et crèmes fermentés ou acidifiés, même concen...
+[VECTOR_SEARCH] ?? Recherche vectorielle terminée en 2134ms. Chunks retournés : 5
+[CHAT_SERVICE] ? Mode LLM activé - Génération avec Mistral
+[MISTRAL] ? Envoi du prompt à Mistral...
+[MISTRAL] ? Réponse reçue de Mistral (685 caractères)
+[CHAT_SERVICE] ? Début du traitement de la question: Tell me about importing horses for slaughter
+[CHAT_SERVICE] ? Recherche vectorielle des documents pertinents...
+[VECTOR_SEARCH] ? Question utilisateur : Tell me about importing horses for slaughter
+[VECTOR_SEARCH] ? Génération de l'embedding pour la question...
+[VECTOR_SEARCH] ? Embedding généré (dimension: 768)
+[VECTOR_SEARCH] ? Recherche vectorielle dans ChromaDB...
+[VECTOR_SEARCH] ? Résultats trouvés : 10
+[VECTOR_SEARCH] ? Erreur lors de la recherche vectorielle : Cannot invoke "dev.langchain4j.data.segment.TextSegment.text()" because the return value of "dev.langchain4j.store.embedding.EmbeddingMatch.embedded()" is null
+java.lang.NullPointerException: Cannot invoke "dev.langchain4j.data.segment.TextSegment.text()" because the return value of "dev.langchain4j.store.embedding.EmbeddingMatch.embedded()" is null
+	at com.example.chatbotrag.service.VectorSearchService.findTopKRelevantChunks(VectorSearchService.java:74)
+	at com.example.chatbotrag.service.ChatService.ask(ChatService.java:36)
+	at com.example.chatbotrag.controller.ChatController.ask(ChatController.java:49)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:181)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:243)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:238)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at com.example.chatbotrag.filter.RequestUriFilter.doFilter(RequestUriFilter.java:38)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[FALLBACK] ? Utilisation de la recherche par mots-clés comme fallback
+Hibernate: SELECT * FROM chunk LIMIT ?
+[FALLBACK] ? Chunks sélectionnés par mots-clés : 0
+[CHAT_SERVICE] ? Début du traitement de la question: What are the import regulations?
+[CHAT_SERVICE] ? Recherche vectorielle des documents pertinents...
+[VECTOR_SEARCH] ? Question utilisateur : What are the import regulations?
+[VECTOR_SEARCH] ? Génération de l'embedding pour la question...
+[VECTOR_SEARCH] ? Embedding généré (dimension: 768)
+[VECTOR_SEARCH] ? Recherche vectorielle dans ChromaDB...
+[VECTOR_SEARCH] ? Résultats trouvés : 10
+[VECTOR_SEARCH] ? Chunk sélectionné (score: 0,8506): ranulés :  L'importation au Maroc des produits relatifs à cette position est soumise à des mesures t...
+[VECTOR_SEARCH] ? Chunk sélectionné (score: 0,8478): - d'eau douce  L'importation au Maroc des produits relatifs à cette position est soumise à des mesur...
+[VECTOR_SEARCH] ? Chunk sélectionné (score: 0,8475): - civelles  L'importation au Maroc des produits relatifs à cette position est soumise à des mesures ...
+[VECTOR_SEARCH] ? Chunk sélectionné (score: 0,8469): - - Harengs (Clupea harengus, Clupea pallasii )  L'importation au Maroc des produits relatifs à cett...
+[VECTOR_SEARCH] ? Erreur lors de la recherche vectorielle : Cannot invoke "dev.langchain4j.data.segment.TextSegment.text()" because the return value of "dev.langchain4j.store.embedding.EmbeddingMatch.embedded()" is null
+java.lang.NullPointerException: Cannot invoke "dev.langchain4j.data.segment.TextSegment.text()" because the return value of "dev.langchain4j.store.embedding.EmbeddingMatch.embedded()" is null
+	at com.example.chatbotrag.service.VectorSearchService.findTopKRelevantChunks(VectorSearchService.java:74)
+	at com.example.chatbotrag.service.ChatService.ask(ChatService.java:36)
+	at com.example.chatbotrag.controller.ChatController.ask(ChatController.java:49)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:181)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:243)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:238)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at com.example.chatbotrag.filter.RequestUriFilter.doFilter(RequestUriFilter.java:38)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+[FALLBACK] ? Utilisation de la recherche par mots-clés comme fallback
+Hibernate: SELECT * FROM chunk LIMIT ?
+[FALLBACK] ? Chunks sélectionnés par mots-clés : 0
+[CHAT_SERVICE] ? Début du traitement de la question: Hello how are you?
+Hibernate: select c1_0.id,c1_0.document_id,c1_0.text from chunk c1_0
+[CHAT_SERVICE] ? Début du traitement de la question: Write me a poem about cats
+[CHAT_SERVICE] ? Recherche vectorielle des documents pertinents...
+[VECTOR_SEARCH] ? Question utilisateur : Write me a poem about cats
+[VECTOR_SEARCH] ? Génération de l'embedding pour la question...
+[VECTOR_SEARCH] ? Embedding généré (dimension: 768)
+[VECTOR_SEARCH] ? Recherche vectorielle dans ChromaDB...
+[VECTOR_SEARCH] ? Résultats trouvés : 10
+[VECTOR_SEARCH] ? Chunk sélectionné (score: 0,7362): correspond à la catégorie Poissons et crustacés, mollusques et autres invertébrés aquatiques, à la s...
+[VECTOR_SEARCH] ? Chunk sélectionné (score: 0,7324): orrespond à la catégorie Poissons et crustacés, mollusques et autres invertébrés aquatiques, à la so...
+[VECTOR_SEARCH] ? Chunk sélectionné (score: 0,7268): spond à la catégorie Poissons et crustacés, mollusques et autres invertébrés aquatiques, à la sous c...
+[VECTOR_SEARCH] ? Chunk sélectionné (score: 0,7249): à la catégorie Poissons et crustacés, mollusques et autres invertébrés aquatiques, à la sous catégor...
+[VECTOR_SEARCH] ? Chunk sélectionné (score: 0,7246): catégorie Poissons et crustacés, mollusques et autres invertébrés aquatiques, à la sous catégorie Po...
+[VECTOR_SEARCH] ?? Recherche vectorielle terminée en 515ms. Chunks retournés : 5
+[CHAT_SERVICE] ? Mode LLM activé - Génération avec Mistral
+[MISTRAL] ? Envoi du prompt à Mistral...
+[MISTRAL] ? Réponse reçue de Mistral (789 caractères)
+[CHAT_SERVICE] ? Début du traitement de la question: tell me about fish import regulations
+[CHAT_SERVICE] ? Recherche vectorielle des documents pertinents...
+[VECTOR_SEARCH] ? Question utilisateur : tell me about fish import regulations
+[VECTOR_SEARCH] ? Génération de l'embedding pour la question...
+[VECTOR_SEARCH] ? Embedding généré (dimension: 768)
+[VECTOR_SEARCH] ? Recherche vectorielle dans ChromaDB...
+[VECTOR_SEARCH] ? Résultats trouvés : 10
+[VECTOR_SEARCH] ? Chunk sélectionné (score: 0,8641): de tilapias (Oreochromis spp.), siluridés (Pangasius spp.,Silurus spp., Clarias spp., Ictalurus spp....
+[VECTOR_SEARCH] ? Chunk sélectionné (score: 0,8569): ertébrés aquatiques, à la sous catégorie Filets de poissons et autre chair de poissons (même hachée)...
+[VECTOR_SEARCH] ? Chunk sélectionné (score: 0,8517): sons etautre chair de poissons du n° 03.04.– Salmonidés, à l'exclusion des abats de poissons comesti...
+[VECTOR_SEARCH] ? Chunk sélectionné (score: 0,8480): importation arabie SAOUDITE un droit préferentiel de 0%.  importation Royaume Uni un droit préferent...
+[VECTOR_SEARCH] ? Chunk sélectionné (score: 0,8469): hachée), frais,réfrigérés ou congelés.– Filets de tilapias (Oreochromis spp.), siluridés (Pangasius ...
+[VECTOR_SEARCH] ?? Recherche vectorielle terminée en 2425ms. Chunks retournés : 5
+[CHAT_SERVICE] ? Mode LLM activé - Génération avec Mistral
+[MISTRAL] ? Envoi du prompt à Mistral...
+[MISTRAL] ? Réponse reçue de Mistral (1518 caractères)
+[API] /chunks/test appelé
+Hibernate: select c1_0.id,c1_0.document_id,c1_0.text from chunk c1_0
+[API] /chunks/sh-codes appelé, codes trouvés: 0

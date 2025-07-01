@@ -1,0 +1,921 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< com.example.chatbotrag:chatbot_rag >-----------------
+[INFO] Building chatbot_rag 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.4.4:run (default-cli) > test-compile @ chatbot_rag >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ chatbot_rag ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ chatbot_rag ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 31 source files with javac [debug parameters release 21] to target\classes
+[INFO] /C:/Users/PC/Desktop/backen_version_final-main/src/main/java/com/example/chatbotrag/service/LanguageDetectionService.java: C:\Users\PC\Desktop\backen_version_final-main\src\main\java\com\example\chatbotrag\service\LanguageDetectionService.java uses or overrides a deprecated API.
+[INFO] /C:/Users/PC/Desktop/backen_version_final-main/src/main/java/com/example/chatbotrag/service/LanguageDetectionService.java: Recompile with -Xlint:deprecation for details.
+[INFO] /C:/Users/PC/Desktop/backen_version_final-main/src/main/java/com/example/chatbotrag/controller/AdminController.java: Some input files use unchecked or unsafe operations.
+[INFO] /C:/Users/PC/Desktop/backen_version_final-main/src/main/java/com/example/chatbotrag/controller/AdminController.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ chatbot_rag ---
+[INFO] skip non existing resourceDirectory C:\Users\PC\Desktop\backen_version_final-main\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ chatbot_rag ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 1 source file with javac [debug parameters release 21] to target\test-classes
+[INFO] 
+[INFO] <<< spring-boot:3.4.4:run (default-cli) < test-compile @ chatbot_rag <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.4.4:run (default-cli) @ chatbot_rag ---
+[INFO] Attaching agents: []
+[APP] ChatbotRagApplication démarre
+Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.4)
+
+2025-06-30T18:11:36.981+01:00  INFO 9696 --- [chatbot_rag] [           main] c.e.chatbotrag.ChatbotRagApplication     : Starting ChatbotRagApplication using Java 21.0.6 with PID 9696 (C:\Users\PC\Desktop\backen_version_final-main\target\classes started by PC in C:\Users\PC\Desktop\backen_version_final-main)
+2025-06-30T18:11:36.983+01:00  INFO 9696 --- [chatbot_rag] [           main] c.e.chatbotrag.ChatbotRagApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-06-30T18:11:37.674+01:00  INFO 9696 --- [chatbot_rag] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-30T18:11:37.736+01:00  INFO 9696 --- [chatbot_rag] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 52 ms. Found 3 JPA repository interfaces.
+2025-06-30T18:11:38.288+01:00  INFO 9696 --- [chatbot_rag] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-06-30T18:11:38.303+01:00  INFO 9696 --- [chatbot_rag] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-30T18:11:38.303+01:00  INFO 9696 --- [chatbot_rag] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-06-30T18:11:38.387+01:00  INFO 9696 --- [chatbot_rag] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-30T18:11:38.388+01:00  INFO 9696 --- [chatbot_rag] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1356 ms
+Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+2025-06-30T18:11:38.543+01:00  INFO 9696 --- [chatbot_rag] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-30T18:11:38.628+01:00  INFO 9696 --- [chatbot_rag] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-06-30T18:11:38.675+01:00  INFO 9696 --- [chatbot_rag] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-30T18:11:38.986+01:00  INFO 9696 --- [chatbot_rag] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-30T18:11:39.024+01:00  INFO 9696 --- [chatbot_rag] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-30T18:11:39.208+01:00  INFO 9696 --- [chatbot_rag] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@59a94d0f
+2025-06-30T18:11:39.210+01:00  INFO 9696 --- [chatbot_rag] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-30T18:11:39.259+01:00  WARN 9696 --- [chatbot_rag] [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-06-30T18:11:39.261+01:00  WARN 9696 --- [chatbot_rag] [           main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-06-30T18:11:39.290+01:00  INFO 9696 --- [chatbot_rag] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-30T18:11:40.317+01:00  INFO 9696 --- [chatbot_rag] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-30T18:11:40.412+01:00  INFO 9696 --- [chatbot_rag] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-30T18:11:40.745+01:00  INFO 9696 --- [chatbot_rag] [           main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authProvider
+2025-06-30T18:11:40.746+01:00  WARN 9696 --- [chatbot_rag] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-06-30T18:11:41.264+01:00  INFO 9696 --- [chatbot_rag] [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+[API] ChunkController instancié
+2025-06-30T18:11:41.338+01:00  WARN 9696 --- [chatbot_rag] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-30T18:11:41.739+01:00  INFO 9696 --- [chatbot_rag] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-06-30T18:11:41.746+01:00  INFO 9696 --- [chatbot_rag] [           main] c.e.chatbotrag.ChatbotRagApplication     : Started ChatbotRagApplication in 5.168 seconds (process running for 5.696)
+Hibernate: select count(*) from admin_user au1_0
+?? Admin existant détecté. Aucun nouveau compte créé.
+2025-06-30T18:12:02.442+01:00  INFO 9696 --- [chatbot_rag] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-30T18:12:02.443+01:00  INFO 9696 --- [chatbot_rag] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-30T18:12:02.444+01:00  INFO 9696 --- [chatbot_rag] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[SYNC] Clearing all data from both stores...
+Hibernate: select c1_0.id,c1_0.document_id,c1_0.text from chunk c1_0
+Hibernate: select d1_0.id,d1_0.language,d1_0.name from document d1_0
+Hibernate: select c1_0.document_id,c1_0.id,c1_0.text from chunk c1_0 where c1_0.document_id=?
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embeddings supprimés : 125
+? Cleared 125 chunks from collection: emsi-ai-collection
+[SYNC] All data cleared from both ChromaDB and MySQL
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from chunk where id=?
+Hibernate: delete from document where id=?
+Hibernate: select au1_0.id,au1_0.password,au1_0.username from admin_user au1_0 where au1_0.username=?
+Hibernate: select d1_0.id,d1_0.language,d1_0.name from document d1_0
+Hibernate: select au1_0.id,au1_0.password,au1_0.username from admin_user au1_0 where au1_0.username=?
+Hibernate: select d1_0.id,d1_0.language,d1_0.name from document d1_0
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Count Chroma réussi: 0 embeddings trouvés
+2025-06-30T18:12:50.101+01:00  WARN 9696 --- [chatbot_rag] [nio-8080-exec-5] org.apache.tika.parsers.PDFParser        : J2KImageReader not loaded. JPEG2000 files will not be processed.
+See https://pdfbox.apache.org/2.0/dependencies.html#jai-image-io
+for optional dependencies.
+
+2025-06-30T18:12:50.135+01:00  WARN 9696 --- [chatbot_rag] [nio-8080-exec-5] org.apache.tika.parser.SQLite3Parser     : org.xerial's sqlite-jdbc is not loaded.
+Please provide the jar on your classpath to parse sqlite files.
+See tika-parsers/pom.xml for the correct version.
+2025-06-30T18:12:50.427+01:00 DEBUG 9696 --- [chatbot_rag] [nio-8080-exec-5] o.a.p.o.o.PackageRelationshipCollection  : Parsing relationship: /customXml/_rels/item1.xml.rels
+2025-06-30T18:12:50.433+01:00 DEBUG 9696 --- [chatbot_rag] [nio-8080-exec-5] o.a.p.o.o.PackageRelationshipCollection  : Parsing relationship: /word/_rels/document.xml.rels
+2025-06-30T18:12:50.435+01:00 DEBUG 9696 --- [chatbot_rag] [nio-8080-exec-5] o.a.p.o.o.PackageRelationshipCollection  : Parsing relationship: /_rels/.rels
+2025-06-30T18:12:50.441+01:00 DEBUG 9696 --- [chatbot_rag] [nio-8080-exec-5] org.apache.poi.ooxml.POIXMLFactory       : using default POIXMLDocumentPart for http://schemas.openxmlformats.org/officeDocument/2006/relationships/customXml
+2025-06-30T18:12:50.441+01:00 DEBUG 9696 --- [chatbot_rag] [nio-8080-exec-5] org.apache.poi.ooxml.POIXMLFactory       : using default POIXMLDocumentPart for http://schemas.microsoft.com/office/2007/relationships/stylesWithEffects
+2025-06-30T18:12:50.442+01:00 DEBUG 9696 --- [chatbot_rag] [nio-8080-exec-5] org.apache.poi.ooxml.POIXMLFactory       : using default POIXMLDocumentPart for http://schemas.openxmlformats.org/officeDocument/2006/relationships/webSettings
+2025-06-30T18:12:50.442+01:00 DEBUG 9696 --- [chatbot_rag] [nio-8080-exec-5] org.apache.poi.ooxml.POIXMLFactory       : using default POIXMLDocumentPart for http://schemas.openxmlformats.org/officeDocument/2006/relationships/fontTable
+2025-06-30T18:12:50.442+01:00 DEBUG 9696 --- [chatbot_rag] [nio-8080-exec-5] org.apache.poi.ooxml.POIXMLFactory       : using default POIXMLDocumentPart for http://schemas.openxmlformats.org/officeDocument/2006/relationships/theme
+2025-06-30T18:12:50.442+01:00 DEBUG 9696 --- [chatbot_rag] [nio-8080-exec-5] org.apache.poi.ooxml.POIXMLFactory       : using default POIXMLDocumentPart for http://schemas.openxmlformats.org/officeDocument/2006/relationships/customXmlProps
+? Ingestion d'un nouveau document : partie_1.docx (UUID de référence pour chunks: c56b1cce-2b9f-4981-87fd-57797d7ce1d0)
+? [DEBUG] Trouvé SH code 0101292000 dans le texte complet
+? [DEBUG] Trouvé fragments 'de course' et 'vingt' dans le texte
+? [DEBUG] Taille du texte complet: 100000 caractères
+? [DEBUG] Premiers 500 caractères: 
+
+le code SH 0101210000 correspond à la catégorie Animaux vivants, à la sous catégorie Chevaux, ânes, mulets et bardots, vivants. Ce code identifie - - Reproducteurs de race pure (a.)
+
+L'importation au Maroc des produits relatifs à cette position est soumise à des mesures tarifaires et non tarifaires imposées par la réglementation en vigueur.
+
+Les mesures tarifaires applicables à cette position sont les droits de douanes suivants :
+- Droit d'Importation* ( DI ) : 2,5 %
+- Taxe Parafiscale à l'Imp
+? Langue détectée : fr
+? [DEBUG] Nombre total de chunks générés: 125
+? [DEBUG] SH code 0101292000 trouvé dans le chunk 3
+? [DEBUG] Contenu du chunk 3: échange continentale africaine ( 10ans) un droit préferentiel de 6%.
+
+importation EMIRAT un droit préferentiel de 0%.
+
+importation IRAK un droit préferentiel de 0.0%.
+
+importation LIBYA un droit préfe...
+? [DEBUG] Fragments clés trouvés dans le chunk 3
+? [DEBUG] Contenu du chunk 3: échange continentale africaine ( 10ans) un droit préferentiel de 6%.
+
+importation EMIRAT un droit préferentiel de 0%.
+
+importation IRAK un droit préferentiel de 0.0%.
+
+importation LIBYA un droit préfe...
+[INFO] Embedding généré pour le chunk 0 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_0, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_0
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_0
+[INFO] Embedding généré pour le chunk 1 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_1, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_1
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_1
+[INFO] Embedding généré pour le chunk 2 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_2, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_2
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_2
+[INFO] Embedding généré pour le chunk 3 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_3, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_3
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_3
+[INFO] Embedding généré pour le chunk 4 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_4, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_4
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_4
+[INFO] Embedding généré pour le chunk 5 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_5, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_5
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_5
+[INFO] Embedding généré pour le chunk 6 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_6, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_6
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_6
+[INFO] Embedding généré pour le chunk 7 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_7, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_7
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_7
+[INFO] Embedding généré pour le chunk 8 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_8, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_8
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_8
+[INFO] Embedding généré pour le chunk 9 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_9, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_9
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_9
+[INFO] Embedding généré pour le chunk 10 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_10, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_10
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_10
+[INFO] Embedding généré pour le chunk 11 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_11, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_11
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_11
+[INFO] Embedding généré pour le chunk 12 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_12, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_12
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_12
+[INFO] Embedding généré pour le chunk 13 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_13, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_13
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_13
+[INFO] Embedding généré pour le chunk 14 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_14, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_14
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_14
+[INFO] Embedding généré pour le chunk 15 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_15, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_15
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_15
+[INFO] Embedding généré pour le chunk 16 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_16, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_16
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_16
+[INFO] Embedding généré pour le chunk 17 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_17, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_17
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_17
+[INFO] Embedding généré pour le chunk 18 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_18, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_18
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_18
+[INFO] Embedding généré pour le chunk 19 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_19, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_19
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_19
+[INFO] Embedding généré pour le chunk 20 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_20, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_20
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_20
+[INFO] Embedding généré pour le chunk 21 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_21, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_21
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_21
+[INFO] Embedding généré pour le chunk 22 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_22, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_22
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_22
+[INFO] Embedding généré pour le chunk 23 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_23, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_23
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_23
+[INFO] Embedding généré pour le chunk 24 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_24, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_24
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_24
+[INFO] Embedding généré pour le chunk 25 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_25, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_25
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_25
+[INFO] Embedding généré pour le chunk 26 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_26, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_26
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_26
+[INFO] Embedding généré pour le chunk 27 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_27, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_27
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_27
+[INFO] Embedding généré pour le chunk 28 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_28, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_28
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_28
+[INFO] Embedding généré pour le chunk 29 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_29, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_29
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_29
+[INFO] Embedding généré pour le chunk 30 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_30, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_30
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_30
+[INFO] Embedding généré pour le chunk 31 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_31, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_31
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_31
+[INFO] Embedding généré pour le chunk 32 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_32, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_32
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_32
+[INFO] Embedding généré pour le chunk 33 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_33, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_33
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_33
+[INFO] Embedding généré pour le chunk 34 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_34, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_34
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_34
+[INFO] Embedding généré pour le chunk 35 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_35, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_35
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_35
+[INFO] Embedding généré pour le chunk 36 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_36, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_36
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_36
+[INFO] Embedding généré pour le chunk 37 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_37, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_37
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_37
+[INFO] Embedding généré pour le chunk 38 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_38, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_38
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_38
+[INFO] Embedding généré pour le chunk 39 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_39, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_39
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_39
+[INFO] Embedding généré pour le chunk 40 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_40, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_40
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_40
+[INFO] Embedding généré pour le chunk 41 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_41, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_41
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_41
+[INFO] Embedding généré pour le chunk 42 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_42, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_42
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_42
+[INFO] Embedding généré pour le chunk 43 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_43, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_43
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_43
+[INFO] Embedding généré pour le chunk 44 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_44, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_44
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_44
+[INFO] Embedding généré pour le chunk 45 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_45, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_45
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_45
+[INFO] Embedding généré pour le chunk 46 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_46, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_46
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_46
+[INFO] Embedding généré pour le chunk 47 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_47, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_47
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_47
+[INFO] Embedding généré pour le chunk 48 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_48, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_48
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_48
+[INFO] Embedding généré pour le chunk 49 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_49, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_49
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_49
+[INFO] Embedding généré pour le chunk 50 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_50, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_50
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_50
+[INFO] Embedding généré pour le chunk 51 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_51, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_51
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_51
+[INFO] Embedding généré pour le chunk 52 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_52, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_52
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_52
+[INFO] Embedding généré pour le chunk 53 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_53, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_53
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_53
+[INFO] Embedding généré pour le chunk 54 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_54, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_54
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_54
+[INFO] Embedding généré pour le chunk 55 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_55, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_55
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_55
+[INFO] Embedding généré pour le chunk 56 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_56, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_56
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_56
+[INFO] Embedding généré pour le chunk 57 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_57, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_57
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_57
+[INFO] Embedding généré pour le chunk 58 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_58, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_58
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_58
+[INFO] Embedding généré pour le chunk 59 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_59, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_59
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_59
+[INFO] Embedding généré pour le chunk 60 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_60, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_60
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_60
+[INFO] Embedding généré pour le chunk 61 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_61, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_61
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_61
+[INFO] Embedding généré pour le chunk 62 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_62, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_62
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_62
+[INFO] Embedding généré pour le chunk 63 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_63, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_63
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_63
+[INFO] Embedding généré pour le chunk 64 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_64, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_64
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_64
+[INFO] Embedding généré pour le chunk 65 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_65, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_65
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_65
+[INFO] Embedding généré pour le chunk 66 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_66, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_66
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_66
+[INFO] Embedding généré pour le chunk 67 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_67, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_67
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_67
+[INFO] Embedding généré pour le chunk 68 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_68, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_68
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_68
+[INFO] Embedding généré pour le chunk 69 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_69, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_69
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_69
+[INFO] Embedding généré pour le chunk 70 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_70, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_70
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_70
+[INFO] Embedding généré pour le chunk 71 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_71, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_71
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_71
+[INFO] Embedding généré pour le chunk 72 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_72, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_72
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_72
+[INFO] Embedding généré pour le chunk 73 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_73, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_73
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_73
+[INFO] Embedding généré pour le chunk 74 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_74, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_74
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_74
+[INFO] Embedding généré pour le chunk 75 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_75, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_75
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_75
+[INFO] Embedding généré pour le chunk 76 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_76, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_76
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_76
+[INFO] Embedding généré pour le chunk 77 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_77, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_77
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_77
+[INFO] Embedding généré pour le chunk 78 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_78, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_78
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_78
+[INFO] Embedding généré pour le chunk 79 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_79, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_79
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_79
+[INFO] Embedding généré pour le chunk 80 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_80, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_80
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_80
+[INFO] Embedding généré pour le chunk 81 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_81, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_81
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_81
+[INFO] Embedding généré pour le chunk 82 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_82, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_82
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_82
+[INFO] Embedding généré pour le chunk 83 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_83, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_83
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_83
+[INFO] Embedding généré pour le chunk 84 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_84, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_84
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_84
+[INFO] Embedding généré pour le chunk 85 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_85, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_85
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_85
+[INFO] Embedding généré pour le chunk 86 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_86, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_86
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_86
+[INFO] Embedding généré pour le chunk 87 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_87, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_87
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_87
+[INFO] Embedding généré pour le chunk 88 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_88, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_88
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_88
+[INFO] Embedding généré pour le chunk 89 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_89, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_89
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_89
+[INFO] Embedding généré pour le chunk 90 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_90, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_90
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_90
+[INFO] Embedding généré pour le chunk 91 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_91, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_91
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_91
+[INFO] Embedding généré pour le chunk 92 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_92, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_92
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_92
+[INFO] Embedding généré pour le chunk 93 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_93, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_93
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_93
+[INFO] Embedding généré pour le chunk 94 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_94, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_94
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_94
+[INFO] Embedding généré pour le chunk 95 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_95, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_95
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_95
+[INFO] Embedding généré pour le chunk 96 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_96, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_96
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_96
+[INFO] Embedding généré pour le chunk 97 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_97, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_97
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_97
+[INFO] Embedding généré pour le chunk 98 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_98, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_98
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_98
+[INFO] Embedding généré pour le chunk 99 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_99, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_99
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_99
+[INFO] Embedding généré pour le chunk 100 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_100, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_100
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_100
+[INFO] Embedding généré pour le chunk 101 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_101, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_101
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_101
+[INFO] Embedding généré pour le chunk 102 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_102, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_102
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_102
+[INFO] Embedding généré pour le chunk 103 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_103, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_103
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_103
+[INFO] Embedding généré pour le chunk 104 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_104, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_104
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_104
+[INFO] Embedding généré pour le chunk 105 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_105, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_105
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_105
+[INFO] Embedding généré pour le chunk 106 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_106, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_106
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_106
+[INFO] Embedding généré pour le chunk 107 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_107, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_107
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_107
+[INFO] Embedding généré pour le chunk 108 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_108, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_108
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_108
+[INFO] Embedding généré pour le chunk 109 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_109, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_109
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_109
+[INFO] Embedding généré pour le chunk 110 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_110, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_110
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_110
+[INFO] Embedding généré pour le chunk 111 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_111, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_111
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_111
+[INFO] Embedding généré pour le chunk 112 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_112, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_112
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_112
+[INFO] Embedding généré pour le chunk 113 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_113, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_113
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_113
+[INFO] Embedding généré pour le chunk 114 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_114, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_114
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_114
+[INFO] Embedding généré pour le chunk 115 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_115, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_115
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_115
+[INFO] Embedding généré pour le chunk 116 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_116, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_116
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_116
+[INFO] Embedding généré pour le chunk 117 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_117, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_117
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_117
+[INFO] Embedding généré pour le chunk 118 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_118, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_118
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_118
+[INFO] Embedding généré pour le chunk 119 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_119, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_119
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_119
+[INFO] Embedding généré pour le chunk 120 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_120, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_120
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_120
+[INFO] Embedding généré pour le chunk 121 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_121, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_121
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_121
+[INFO] Embedding généré pour le chunk 122 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_122, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_122
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_122
+[INFO] Embedding généré pour le chunk 123 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_123, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_123
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_123
+[INFO] Embedding généré pour le chunk 124 (ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_124, taille: 768)
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
+? Embedding added successfully to emsi-ai-collection with ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_124
+[INFO] Chunk sauvegardé dans ChromaDB avec ID: c56b1cce-2b9f-4981-87fd-57797d7ce1d0_chunk_124
+Hibernate: insert into document (language,name) values (?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+Hibernate: insert into chunk (document_id,text,id) values (?,?,?)
+? Ingestion terminée : 125 chunks liés à partie_1.docx (ID BDD Document: 174)
+Hibernate: select d1_0.id,d1_0.language,d1_0.name from document d1_0
+Hibernate: select c1_0.document_id,c1_0.id,c1_0.text from chunk c1_0 where c1_0.document_id=?
+Hibernate: select c1_0.id,c1_0.document_id,c1_0.text from chunk c1_0
+Hibernate: select c1_0.id,c1_0.document_id,c1_0.text from chunk c1_0 where c1_0.id=?
+[CHAT_SERVICE] ? Début du traitement de la question: que dit le code SH 0101292000
+[CHAT_SERVICE] ? Recherche vectorielle des documents pertinents...
+[VECTOR_SEARCH] ? Question utilisateur : que dit le code SH 0101292000
+[VECTOR_SEARCH] ? Génération de l'embedding pour la question...
+[VECTOR_SEARCH] ? Embedding généré (dimension: 768)
+[VECTOR_SEARCH] ? Recherche vectorielle dans ChromaDB...
+[VECTOR_SEARCH] ?? Aucun résultat vectoriel trouvé. Fallback vers recherche par mots-clés.
+[FALLBACK] ? Utilisation de la recherche par mots-clés comme fallback
+Hibernate: SELECT * FROM chunk LIMIT ?
+[FALLBACK] ? Chunks sélectionnés par mots-clés : 5
+[CHAT_SERVICE] ? Mode LLM activé - Génération avec Mistral
+[MISTRAL] ? Envoi du prompt à Mistral...
+[MISTRAL] ? Réponse reçue de Mistral (636 caractères)
+Hibernate: select count(*) from chunk c1_0
+Hibernate: select count(*) from document d1_0
+?? Création de la collection échouée ou inutile : 500 Internal Server Error on POST request for "http://localhost:8000/api/v1/collections": "{"error":"ValueError('Collection emsi-ai-collection already exists.')"}"
