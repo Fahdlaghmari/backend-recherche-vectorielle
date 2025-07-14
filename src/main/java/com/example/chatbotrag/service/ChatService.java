@@ -9,10 +9,14 @@ import java.util.Collections;
 public class ChatService {
     
     private final VectorSearchService vectorSearchService;
+    private final HybridSearchService hybridSearchService;
     private final OllamaClientService ollamaClient;
     
-    public ChatService(VectorSearchService vectorSearchService, OllamaClientService ollamaClient) {
+    public ChatService(VectorSearchService vectorSearchService, 
+                       HybridSearchService hybridSearchService,
+                       OllamaClientService ollamaClient) {
         this.vectorSearchService = vectorSearchService;
+        this.hybridSearchService = hybridSearchService;
         this.ollamaClient = ollamaClient;
     }
 
@@ -22,32 +26,61 @@ public class ChatService {
         // 1. 🎯 Vérifications préliminaires
         if (userQuestion != null) {
             String q = userQuestion.trim().toLowerCase();
-            if (q.matches(".*\\b(bonjour|coucou|hello|salut|bonsoir|hi|hey)\\b.*")) {
-                return Collections.singletonList("👋 Bonjour ! Comment puis-je vous aider aujourd'hui ?");
+            // Reconnaissance des salutations et expressions courantes
+            if (q.matches(".*\\b(bonjour|coucou|hello|salut|bonsoir|hi|hey)\\b.*") ||
+                q.matches(".*\\b(ca va|cava|ça va|comment ça va|comment ca va)\\b.*") ||
+                q.matches(".*\\b(quoi de neuf|comment tu vas|comment allez-vous)\\b.*")) {
+                return Collections.singletonList("👋 Bonjour ! Ça va bien, merci ! Comment puis-je vous aider avec vos questions douanières aujourd'hui ?");
+            }
+            // Reconnaissance des questions générales sur l'aide
+            if (q.matches(".*\\b(aide|help|aidez-moi|comment utiliser|que peux-tu faire)\\b.*")) {
+                return Collections.singletonList("🤝 Je suis votre assistant douanier spécialisé ! Je peux vous aider avec :\n\n" +
+                    "• 📋 Codes SH et classifications tarifaires\n" +
+                    "• 💰 Droits de douane et taxes à l'importation\n" +
+                    "• 🌍 Accords commerciaux et tarifs préférentiels\n" +
+                    "• 📦 Réglementations d'importation au Maroc\n\n" +
+                    "Posez-moi une question spécifique sur un produit à importer !");
             }
         }
         if (userQuestion == null || userQuestion.isBlank()) {
             return Collections.singletonList("Désolé, je n'ai pas de réponse pour votre question.");
         }
         
-        // 2. 🔍 Recherche vectorielle des documents pertinents
-        System.out.println("[CHAT_SERVICE] 🔍 Recherche vectorielle des documents pertinents...");
-        final int MAX_CONTEXT_CHUNKS = 8; // Augmenté pour avoir plus de contexte
-        List<String> topChunks = vectorSearchService.findTopKRelevantChunks(userQuestion, MAX_CONTEXT_CHUNKS);
+        // 2. 🔍 Recherche hybride des documents pertinents
+        System.out.println("[CHAT_SERVICE] 🔍 Recherche hybride des documents pertinents...");
+        final int MAX_CONTEXT_CHUNKS = 3; // Réduit pour éviter les timeouts
+        
+        // Utilisation de la recherche hybride
+        List<HybridSearchService.HybridSearchResult> hybridResults = hybridSearchService.searchHybrid(userQuestion, MAX_CONTEXT_CHUNKS);
+        
+        // Extraction des chunks textuels pour compatibilité
+        List<String> topChunks = new ArrayList<>();
+        for (HybridSearchService.HybridSearchResult result : hybridResults) {
+            topChunks.add(result.getText());
+        }
         
         // Debug: Log the chunks found
-        System.out.println("[CHAT_SERVICE] 📊 Chunks trouvés: " + topChunks.size());
-        for (int i = 0; i < topChunks.size(); i++) {
-            String preview = topChunks.get(i).substring(0, Math.min(100, topChunks.get(i).length())).replace("\n", " ");
-            System.out.println("[CHAT_SERVICE] Chunk " + i + ": " + preview + "...");
+        System.out.println("[CHAT_SERVICE] 📊 Résultats hybrides trouvés: " + hybridResults.size());
+        for (int i = 0; i < hybridResults.size(); i++) {
+            HybridSearchService.HybridSearchResult result = hybridResults.get(i);
+            String preview = result.getText().substring(0, Math.min(100, result.getText().length())).replace("\n", " ");
+            System.out.println("[CHAT_SERVICE] Résultat " + i + " (score: " + 
+                               String.format("%.3f", result.getTotalScore()) + "): " + preview + "...");
+            
+            // Log metadata info if available
+            if (result.getMetadata() != null) {
+                System.out.println("[CHAT_SERVICE] - Métadonnées: SH=" + result.getMetadata().getCodeSh() + 
+                                   ", Type=" + result.getMetadata().getTypeProduit() + 
+                                   ", État=" + result.getMetadata().getEtatProduit());
+            }
             
             // Check for specific content
-            if (topChunks.get(i).contains("0101292000")) {
-                System.out.println("[CHAT_SERVICE] ✅ TROUVÉ CODE SH 0101292000 dans chunk " + i);
+            if (result.getText().contains("0101292000")) {
+                System.out.println("[CHAT_SERVICE] ✅ TROUVÉ CODE SH 0101292000 dans résultat " + i);
             }
         }
         
-        if (topChunks == null || topChunks.isEmpty()) {
+        if (topChunks.isEmpty()) {
             return Collections.singletonList("Désolé, je n'ai pas d'information sur ce sujet dans ma base documentaire.");
         }
         
@@ -104,12 +137,20 @@ public class ChatService {
                                "\n\nRÉPONSE (respectez strictement le format demandé):";
             
             System.out.println("[MISTRAL] 📤 Envoi du prompt à Mistral...");
+            System.out.println("[DEBUG] PROMPT COMPLET:");
+            System.out.println("=" + "=".repeat(80));
+            System.out.println(fullPrompt);
+            System.out.println("=" + "=".repeat(80));
             
             // 3. 🚀 Appel à Mistral
             String mistralResponse = ollamaClient.generateWithMistral(fullPrompt);
             
             if (mistralResponse != null && !mistralResponse.trim().isEmpty()) {
                 System.out.println("[MISTRAL] ✅ Réponse reçue de Mistral (" + mistralResponse.length() + " caractères)");
+                System.out.println("[DEBUG] RÉPONSE MISTRAL:");
+                System.out.println("-" + "-".repeat(80));
+                System.out.println(mistralResponse);
+                System.out.println("-" + "-".repeat(80));
                 
                 // 4. 🎨 Post-traitement pour l'affichage web
                 String formattedResponse = formatForWeb(mistralResponse);
@@ -127,27 +168,41 @@ public class ChatService {
     }
     
     /**
-     * 📝 Construction du prompt système pour Mistral
+     * 📝 Construction du prompt système pour Mistral (générique pour tous codes SH)
      */
     private String construireMistralPrompt() {
         return "Tu es un assistant douanier expert spécialisé dans les codes SH, droits de douane et réglementations d'importation au Maroc.\n" +
-               "\nTu dois répondre STRICTEMENT au format suivant (utilise EXACTEMENT ces emojis et cette structure):\n" +
-               "\n📌 Code SH : [extrait le code à 10 chiffres EXACTEMENT comme dans le document]\n" +
-               "📦 Description : [description complète du produit]\n" +
-               "📊 Droits & Taxes :\n" +
-               "  • DI (Droit d'Importation) : [pourcentage exact du document]\n" +
-               "  • TPI (Taxe Parafiscale à l'Importation) : [pourcentage exact du document]\n" +
-               "  • TVA (Taxe sur la Valeur Ajoutée) : [pourcentage exact du document]\n" +
-               "🧾 Contingents & Quotas : [recopie les informations exactes sur les contingents]\n" +
-               "🤝 Accords et Conventions : [liste tous les accords avec leurs taux préférentiels]\n" +
-               "\nRÈGLES CRITIQUES :\n" +
-               "1. Cherche spécifiquement le code SH à 10 chiffres dans les documents fournis\n" +
-               "2. Extrais les informations EXACTEMENT comme écrites, avec les mêmes chiffres et pourcentages\n" +
-               "3. Pour les chevaux de course, cherche le code 0101292000 spécifiquement\n" +
-               "4. Si tu trouves des informations partielles, utilise-les quand même\n" +
-               "5. N'invente JAMAIS de valeurs - utilise uniquement ce qui est dans les documents\n" +
-               "6. Si une section n'a pas d'information, écris 'Non précisé dans les documents fournis'\n" +
-               "7. Respecte EXACTEMENT le format avec les emojis et puces";
+               "\nTon objectif est d'extraire les informations EXACTES des documents fournis et de les présenter de manière structurée.\n" +
+               "\nCommence toujours ta réponse par une phrase d'introduction personnalisée selon la question, par exemple :\n" +
+               "'Pour l'importation de [produit] au Maroc, voici les informations clés à prendre en compte :'\n" +
+               "\nPuis structure ta réponse EXACTEMENT selon ce format professionnel :\n\n" +
+               
+               "Position Tarifaire\n" +
+               "Code SH : [code à 10 chiffres exact trouvé dans le document]\n" +
+               "Description : [description complète et précise du produit selon le document, copie exacte].\n\n" +
+               
+               "Droits et Taxes\n" +
+               "Droit d'Importation (DI) : [pourcentage exact trouvé dans le document]\n" +
+               "Taxe Parafiscale à l'Importation (TPI) : [pourcentage exact trouvé dans le document]\n" +
+               "Taxe sur la Valeur Ajoutée à l'Importation (TVA) : [pourcentage exact trouvé dans le document]\n\n" +
+               
+               "Accords et Conventions\n" +
+               "Les [produits concernés] peuvent bénéficier de droits préférentiels dans le cadre des accords suivants :\n\n" +
+               "[Liste UNIQUEMENT les accords trouvés dans les documents avec leurs taux EXACTS]\n\n" +
+               
+               "RÈGLES STRICTES D'EXTRACTION :\n" +
+               "1. COPIE EXACTEMENT les informations comme écrites dans les documents\n" +
+               "2. N'invente JAMAIS de valeurs - utilise UNIQUEMENT les données présentes dans les documents\n" +
+               "3. Si une information n'est pas présente dans les documents, écris 'Non spécifié dans les documents'\n" +
+               "4. CHERCHE tous les codes SH (patterns à 10 chiffres) présents dans les documents\n" +
+               "5. IDENTIFIE automatiquement le code SH correspondant au produit de la question\n" +
+               "6. Pour les pourcentages, copie exactement les valeurs avec le symbole %\n" +
+               "7. Pour les accords commerciaux, liste SEULEMENT ceux mentionnés explicitement avec leurs taux\n" +
+               "8. Respecte exactement le format sans emojis ni formatage HTML\n" +
+               "9. Remplace [produit] et [produits concernés] par le nom exact du produit de la question\n" +
+               "10. Si plusieurs documents sont fournis, utilise celui qui correspond le mieux à la question\n" +
+               "11. Privilégie le document contenant le code SH exact correspondant au produit demandé\n" +
+               "12. ANALYSE le contenu pour identifier automatiquement le bon code SH même si non mentionné explicitement";
     }
     
     /**
@@ -155,17 +210,41 @@ public class ChatService {
      */
     private String formatForWeb(String mistralResponse) {
         // Conversion des sauts de ligne en balises HTML
-        String formatted = mistralResponse.replace("\n", "<br>")
-                                         .replace("📌", "<br>📌")
-                                         .replace("📦", "<br>📦")
-                                         .replace("📊", "<br>📊")
-                                         .replace("🧾", "<br>🧾")
-                                         .replace("🤝", "<br>🤝");
+        String formatted = mistralResponse.replace("\n", "<br>");
+        
+        // Formatage spécial pour les titres (sans emojis)
+        formatted = formatted.replace("Position Tarifaire", "<br><strong style='color:#2563eb; font-size:1.2em;'>Position Tarifaire</strong>")
+                            .replace("Droits et Taxes", "<br><br><strong style='color:#059669; font-size:1.2em;'>Droits et Taxes</strong>")
+                            .replace("Accords et Conventions", "<br><br><strong style='color:#7c3aed; font-size:1.2em;'>Accords et Conventions</strong>");
+        
+        // Formatage pour les codes SH et descriptions importantes
+        formatted = formatted.replace("Code SH :", "<br><strong style='color:#1f2937;'>Code SH :</strong>")
+                            .replace("Description :", "<br><strong style='color:#1f2937;'>Description :</strong>");
+        
+        // Formatage pour les taxes et droits
+        formatted = formatted.replace("Droit d'Importation (DI) :", "<br><strong>Droit d'Importation (DI) :</strong>")
+                            .replace("Taxe Parafiscale à l'Importation (TPI) :", "<br><strong>Taxe Parafiscale à l'Importation (TPI) :</strong>")
+                            .replace("Taxe sur la Valeur Ajoutée à l'Importation (TVA) :", "<br><strong>Taxe sur la Valeur Ajoutée à l'Importation (TVA) :</strong>");
+        
+        // Formatage pour les accords commerciaux
+        formatted = formatted.replace("Union Européenne :", "<br>Union Européenne :")
+                            .replace("Ligue Arabe :", "<br>Ligue Arabe :")
+                            .replace("Accord d'Agadir :", "<br>Accord d'Agadir :")
+                            .replace("États-Unis :", "<br>États-Unis :")
+                            .replace("Zone de libre-échange continentale africaine", "<br>Zone de libre-échange continentale africaine")
+                            .replace("Émirats Arabes Unis :", "<br>Émirats Arabes Unis :")
+                            .replace("Irak :", "<br>Irak :")
+                            .replace("Libye :", "<br>Libye :")
+                            .replace("Royaume-Uni :", "<br>Royaume-Uni :")
+                            .replace("Algérie :", "<br>Algérie :");
         
         // Nettoyage des balises en trop au début
         if (formatted.startsWith("<br>")) {
             formatted = formatted.substring(4);
         }
+        
+        // Suppression des doubles <br> consécutifs excessifs
+        formatted = formatted.replaceAll("(<br>){3,}", "<br><br>");
         
         return formatted;
     }

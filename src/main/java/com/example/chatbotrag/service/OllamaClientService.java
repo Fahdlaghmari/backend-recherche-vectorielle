@@ -19,15 +19,15 @@ public class OllamaClientService {
 
     public OllamaClientService(RestTemplateBuilder restTemplateBuilder) {
         this.restTemplate = restTemplateBuilder
-                .connectTimeout(Duration.ofSeconds(30))
-                .readTimeout(Duration.ofSeconds(120))
+                .connectTimeout(Duration.ofSeconds(60))
+                .readTimeout(Duration.ofSeconds(300))
                 .build();
     }
 
 
     public List<Double> embed(String input) {
         Map<String, Object> body = new HashMap<>();
-        body.put("model", "nomic-embed-text"); // Modèle d'embedding
+        body.put("model", "bge-m3"); // Modèle d'embedding
         body.put("prompt", input);
 
         try {

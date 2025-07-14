@@ -1,7 +1,10 @@
 package com.example.chatbotrag.service;
 
+import com.example.chatbotrag.config.Constants;
 import com.example.chatbotrag.model.Chunk;
 import com.example.chatbotrag.model.Document; // Votre entité JPA Document
+import com.example.chatbotrag.model.ProductMetadata;
+import com.example.chatbotrag.repository.ProductMetadataRepository;
 import com.example.chatbotrag.repository.ChunkRepository;
 import com.example.chatbotrag.repository.DocumentRepository;
 
@@ -31,6 +34,9 @@ import org.apache.pdfbox.text.PDFTextStripper;
 @Service
 public class DocumentIngestionService {
 
+    private final ProductMetadataExtractionService metadataExtractionService;
+    private final ProductMetadataRepository productMetadataRepository;
+
     private final ChromaEmbeddingStore embeddingStore;
     private final OllamaClientService ollamaClient;
     private final ChromaHttpClientService chromaHttpClientService;
@@ -49,7 +55,9 @@ public class DocumentIngestionService {
             LanguageDetectionService languageDetectionService,
             DocumentRepository documentRepository,
             ChunkRepository chunkRepository,
-            SHCodeDocumentParser shCodeParser) {
+SHCodeDocumentParser shCodeParser,
+            ProductMetadataExtractionService metadataExtractionService,
+            ProductMetadataRepository productMetadataRepository) {
 
         this.embeddingStore = embeddingStore;
         this.chromaHttpClientService = chromaHttpClientService;
@@ -57,7 +65,9 @@ public class DocumentIngestionService {
         this.languageDetectionService = languageDetectionService;
         this.documentRepository = documentRepository;
         this.chunkRepository = chunkRepository;
-        this.shCodeParser = shCodeParser;
+this.shCodeParser = shCodeParser;
+        this.metadataExtractionService = metadataExtractionService;
+        this.productMetadataRepository = productMetadataRepository;
     }
 
     public static String getLastDetectedLanguage() {
@@ -148,15 +158,16 @@ public class DocumentIngestionService {
         }
 
         Document documentEntity = new Document();
-
-
         documentEntity.setName(documentName);
         documentEntity.setLanguage(lang);
 
         List<Chunk> chunkEntities = new ArrayList<>();
+        List<ProductMetadata> metadataList = new ArrayList<>();
+        
         for (int i = 0; i < textChunks.size(); i++) {
             String chunkText = textChunks.get(i);
             String chunkStoreId = documentIdUUID + "_chunk_" + i;
+            SHCodeDocumentParser.DocumentChunk parsedChunk = parsedChunks.get(i);
 
             List<Double> vector = ollamaClient.embed(chunkText);
             if (vector == null || vector.isEmpty()) {
@@ -172,23 +183,44 @@ public class DocumentIngestionService {
             
             // Store chunk text and embedding in ChromaDB with proper ID
             try {
-                chromaHttpClientService.addEmbeddingWithText("emsi-ai-collection", chunkStoreId, floatArray, chunkText);
+                chromaHttpClientService.addEmbeddingWithText(Constants.CHROMA_COLLECTION_NAME, chunkStoreId, floatArray, chunkText);
                 System.out.println("[INFO] Chunk sauvegardé dans ChromaDB avec ID: " + chunkStoreId);
             } catch (Exception e) {
                 System.err.println("[ERROR] Erreur lors de la sauvegarde du chunk " + chunkStoreId + " dans ChromaDB: " + e.getMessage());
                 continue; // Skip this chunk and continue with the next one
             }
+            
+            // Créer l'entité Chunk
             Chunk chunkEntity = new Chunk();
             chunkEntity.setId(chunkStoreId);
             chunkEntity.setText(chunkText);
             chunkEntity.setDocument(documentEntity);
             chunkEntities.add(chunkEntity);
+            
+            // Préparer les métadonnées pour ce chunk spécifique (sauvegarde différée)
+            try {
+                ProductMetadata metadata = metadataExtractionService.extractMetadata(parsedChunk);
+                metadata.setChunk(chunkEntity);
+                metadataList.add(metadata);
+                System.out.println("[INFO] Métadonnées préparées pour le chunk " + i + " (SH Code: " + parsedChunk.getShCode() + ")");
+            } catch (Exception e) {
+                System.err.println("[ERROR] Erreur lors de la préparation des métadonnées pour le chunk " + i + ": " + e.getMessage());
+            }
         }
 
-
-
+        // Sauvegarder le document avec tous ses chunks
         documentEntity.setChunks(chunkEntities);
         Document savedDocument = documentRepository.save(documentEntity); // L'ID Long du Document est généré ici
+        
+        // Sauvegarder les métadonnées après que les chunks soient persistés
+        for (ProductMetadata metadata : metadataList) {
+            try {
+                productMetadataRepository.save(metadata);
+                System.out.println("[INFO] Métadonnées sauvegardées pour le chunk: " + metadata.getChunk().getId());
+            } catch (Exception e) {
+                System.err.println("[ERROR] Erreur lors de la sauvegarde des métadonnées: " + e.getMessage());
+            }
+        }
 
         System.out.println("✅ Ingestion terminée : " + textChunks.size() + " chunks liés à " + documentName + " (ID BDD Document: " + savedDocument.getId() + ")");
 

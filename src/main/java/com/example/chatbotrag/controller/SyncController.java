@@ -1,7 +1,8 @@
 package com.example.chatbotrag.controller;
 
-import com.example.chatbotrag.service.DataSyncService;
+import com.example.chatbotrag.config.Constants;
 import com.example.chatbotrag.service.ChromaHttpClientService;
+import com.example.chatbotrag.service.DataSyncService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -89,7 +90,7 @@ public class SyncController {
     }
 
     /**
-     * Standardizes to use only emsi-ai-collection and removes others
+     * Standardizes to use only the configured collection and removes others
      */
     @PostMapping("/standardize-collections")
     public ResponseEntity<String> standardizeCollections() {
@@ -97,31 +98,31 @@ public class SyncController {
             List<String> allCollections = chromaHttpClientService.getAllCollectionNames();
             StringBuilder result = new StringBuilder("Collection standardization results:\n");
             
-            // Ensure emsi-ai-collection exists
-            if (!allCollections.contains("emsi-ai-collection")) {
-                chromaHttpClientService.createCollectionIfNotExists("emsi-ai-collection");
-                result.append("✅ Created emsi-ai-collection\n");
+            // Ensure the configured collection exists
+            if (!allCollections.contains(Constants.CHROMA_COLLECTION_NAME)) {
+                chromaHttpClientService.createCollectionIfNotExists(Constants.CHROMA_COLLECTION_NAME);
+                result.append("✅ Created " + Constants.CHROMA_COLLECTION_NAME + "\n");
             } else {
-                result.append("✅ emsi-ai-collection already exists\n");
+                result.append("✅ " + Constants.CHROMA_COLLECTION_NAME + " already exists\n");
             }
             
             // Delete other collections
             for (String collection : allCollections) {
-                if (!collection.equals("emsi-ai-collection")) {
+                if (!collection.equals(Constants.CHROMA_COLLECTION_NAME)) {
                     chromaHttpClientService.deleteCollection(collection);
                     result.append("🗑️ Deleted collection: ").append(collection).append("\n");
                 }
             }
             
-            // Clear emsi-ai-collection to ensure it's empty
-            chromaHttpClientService.clearCollection("emsi-ai-collection");
-            result.append("🧹 Cleared emsi-ai-collection\n");
+            // Clear the configured collection to ensure it's empty
+            chromaHttpClientService.clearCollection(Constants.CHROMA_COLLECTION_NAME);
+            result.append("🧹 Cleared " + Constants.CHROMA_COLLECTION_NAME + "\n");
             
             // Clear MySQL data
             dataSyncService.clearAllData();
             result.append("🧹 Cleared MySQL data\n");
             
-            result.append("\n✅ Standardization complete! Only emsi-ai-collection remains and is empty.");
+            result.append("\n✅ Standardization complete! Only " + Constants.CHROMA_COLLECTION_NAME + " remains and is empty.");
             
             return ResponseEntity.ok(result.toString());
         } catch (Exception e) {

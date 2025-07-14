@@ -28,7 +28,7 @@ var searchResults = embeddingStore.search(searchRequest);
 
 ### 3. **📊 Architecture Hybride**
 
-- **Recherche Vectorielle** : `nomic-embed-text` pour les embeddings
+- **Recherche Vectorielle** : `bge-m3` pour les embeddings
 - **Génération de Réponse** : `mistral` pour les réponses intelligentes  
 - **Fallback** : Système de secours en cas d'erreur
 
@@ -42,7 +42,7 @@ Assurez-vous que ces modèles sont installés :
 
 ```bash
 # Modèle d'embedding (déjà configuré)
-ollama pull nomic-embed-text
+ollama pull bge-m3
 
 # Modèle Mistral pour la génération
 ollama pull mistral
@@ -94,7 +94,7 @@ curl "http://localhost:8080/chat?question=Quels sont les droits d'importation po
 ## 🎯 Fonctionnalités Clés
 
 ### 1. **Recherche Vectorielle Intelligente**
-- ✅ Questions embedded avec `nomic-embed-text`
+- ✅ Questions embedded avec `bge-m3`
 - ✅ Recherche de similarité sémantique dans ChromaDB
 - ✅ Fallback automatique si échec
 

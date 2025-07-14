@@ -1,5 +1,6 @@
 package com.example.chatbotrag.controller;
 
+import com.example.chatbotrag.config.Constants;
 import com.example.chatbotrag.model.AdminUser;
 import com.example.chatbotrag.repository.AdminUserRepository;
 import com.example.chatbotrag.service.ChromaHttpClientService;
@@ -48,8 +49,8 @@ public class AdminController {
     @GetMapping("/purge-chroma")
     public String purgeChroma() {
         try {
-            // Récupérer l'ID de la collection emsi-ai-collection
-            String collectionId = getCollectionId("emsi-ai-collection");
+            // Récupérer l'ID de la collection
+            String collectionId = getCollectionId(Constants.CHROMA_COLLECTION_NAME);
             
             // D'abord, récupérer tous les IDs des embeddings
             String getUrl = CHROMA_BASE_URL + "/collections/" + collectionId + "/get";
@@ -105,8 +106,8 @@ public class AdminController {
     @GetMapping("/check-chroma-count")
     public ResponseEntity<Integer> checkChromaCount() {
         try {
-            // Récupérer l'ID de la collection emsi-ai-collection
-            String collectionId = getCollectionId("emsi-ai-collection");
+            // Récupérer l'ID de la collection
+            String collectionId = getCollectionId(Constants.CHROMA_COLLECTION_NAME);
             
             // Utiliser l'endpoint /get pour récupérer tous les embeddings et compter
             String url = CHROMA_BASE_URL + "/collections/" + collectionId + "/get";

@@ -13,7 +13,7 @@ public class AppConfig {
     @Value("${ollama.baseurl:http://localhost:11434}")
     private String ollamaBaseUrl;
 
-    @Value("${ollama.embeddingmodel.name:nomic-embed-text}")
+    @Value("${ollama.embeddingmodel.name:bge-m3}")
     private String ollamaEmbeddingModelName;
 
     @Value("${ollama.timeout.read:120}")

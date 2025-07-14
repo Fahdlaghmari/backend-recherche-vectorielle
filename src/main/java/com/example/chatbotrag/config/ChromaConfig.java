@@ -8,10 +8,10 @@ import org.springframework.context.annotation.Configuration;
 public class ChromaConfig {
 
     @Bean
-    public ChromaEmbeddingStore embeddingStore() {
+    public ChromaEmbeddingStore chromaEmbeddingStore() {
         return ChromaEmbeddingStore.builder()
                 .baseUrl("http://localhost:8000")
-                .collectionName("emsi-ai-collection")
+                .collectionName(Constants.CHROMA_COLLECTION_NAME)
                 .build();
     }
 }

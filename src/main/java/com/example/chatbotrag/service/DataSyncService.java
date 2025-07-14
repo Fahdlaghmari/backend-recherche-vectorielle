@@ -1,5 +1,6 @@
 package com.example.chatbotrag.service;
 
+import com.example.chatbotrag.config.Constants;
 import com.example.chatbotrag.model.Chunk;
 import com.example.chatbotrag.model.Document;
 import com.example.chatbotrag.repository.ChunkRepository;
@@ -41,7 +42,7 @@ public class DataSyncService {
             System.out.println("[SYNC] Starting ChromaDB to MySQL synchronization...");
             
             // Get all chunks from ChromaDB (using the correct collection name)
-            List<String> chromaChunkIds = chromaHttpClientService.getAllChunkIds("emsi-ai-collection");
+            List<String> chromaChunkIds = chromaHttpClientService.getAllChunkIds(Constants.CHROMA_COLLECTION_NAME);
             System.out.println("[SYNC] Found " + chromaChunkIds.size() + " chunks in ChromaDB");
             
             if (chromaChunkIds.isEmpty()) {
@@ -76,7 +77,7 @@ public class DataSyncService {
             int recoveredCount = 0;
             for (String chunkId : missingChunkIds) {
                 try {
-                    String chunkText = chromaHttpClientService.getChunkText(chunkId, "emsi-ai-collection");
+                    String chunkText = chromaHttpClientService.getChunkText(chunkId, Constants.CHROMA_COLLECTION_NAME);
                     if (chunkText != null && !chunkText.trim().isEmpty()) {
                         Chunk chunk = new Chunk();
                         chunk.setId(chunkId);
@@ -121,7 +122,7 @@ public class DataSyncService {
             documentRepository.deleteAll();
             
             // Clear ChromaDB
-            chromaHttpClientService.clearCollection("emsi-ai-collection");
+            chromaHttpClientService.clearCollection(Constants.CHROMA_COLLECTION_NAME);
             
             String result = "All data cleared from both ChromaDB and MySQL";
             System.out.println("[SYNC] " + result);
@@ -142,7 +143,7 @@ public class DataSyncService {
             long mysqlChunkCount = chunkRepository.count();
             long mysqlDocumentCount = documentRepository.count();
             
-            List<String> chromaChunkIds = chromaHttpClientService.getAllChunkIds("emsi-ai-collection");
+            List<String> chromaChunkIds = chromaHttpClientService.getAllChunkIds(Constants.CHROMA_COLLECTION_NAME);
             long chromaChunkCount = chromaChunkIds.size();
             
             return String.format(

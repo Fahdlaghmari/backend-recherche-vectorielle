@@ -1,9 +1,11 @@
 package com.example.chatbotrag.service;
 
+import com.example.chatbotrag.config.Constants;
 import com.example.chatbotrag.model.Chunk;
 import com.example.chatbotrag.model.Document;
 import com.example.chatbotrag.repository.ChunkRepository;
 import com.example.chatbotrag.repository.DocumentRepository;
+import com.example.chatbotrag.repository.ProductMetadataRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,18 +17,23 @@ public class DeleteService {
     private final ChunkRepository chunkRepository;
     private final DocumentRepository documentRepository;
     private final ChromaHttpClientService chromaHttpClientService;
-    private static final String COLLECTION_NAME = "default";
+    private final ProductMetadataRepository productMetadataRepository;
+    private static final String COLLECTION_NAME = Constants.CHROMA_COLLECTION_NAME;
 
     public DeleteService(ChunkRepository chunkRepository,
                          DocumentRepository documentRepository,
-                         ChromaHttpClientService chromaHttpClientService) {
+                         ChromaHttpClientService chromaHttpClientService,
+                         ProductMetadataRepository productMetadataRepository) {
         this.chunkRepository = chunkRepository;
         this.documentRepository = documentRepository;
         this.chromaHttpClientService = chromaHttpClientService;
+        this.productMetadataRepository = productMetadataRepository;
     }
 
     // ✅ Supprime un chunk + son embedding
     public void deleteChunkById(String chunkId) {
+        // Supprimer les métadonnées avant le chunk pour éviter des erreurs de contrainte.
+        productMetadataRepository.findByChunkId(chunkId).ifPresent(productMetadataRepository::delete);
         chromaHttpClientService.deleteEmbeddingById(COLLECTION_NAME, chunkId);
         chunkRepository.deleteById(chunkId);
         System.out.println("❌ Chunk supprimé : " + chunkId);
@@ -41,7 +48,16 @@ public class DeleteService {
                         .map(Chunk::getId)
                         .collect(Collectors.toList());
 
-                chromaHttpClientService.deleteEmbeddingsByIds(COLLECTION_NAME, chunkIds);
+                try {
+                    if (!chunkIds.isEmpty()) {
+                        // Supprimer les métadonnées associées avant.
+                        chunkIds.forEach(id -> productMetadataRepository.findByChunkId(id).ifPresent(productMetadataRepository::delete));
+                        chromaHttpClientService.deleteEmbeddingsByIds(COLLECTION_NAME, chunkIds);
+                    }
+                } catch (Exception e) {
+                    System.err.println("[WARN] Failed to delete embeddings from ChromaDB: " + e.getMessage());
+                    System.out.println("[INFO] Continuing with database cleanup...");
+                }
                 documentRepository.delete(document); // cascade = chunks supprimés
                 System.out.println("🧼 Document supprimé avec " + chunkIds.size() + " chunks : " + documentId);
             }, () -> {
